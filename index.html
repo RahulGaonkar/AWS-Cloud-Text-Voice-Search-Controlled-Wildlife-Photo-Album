@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/photo-album-style.css">
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="scripts/apiGateway-js-sdk/apigClient.js"></script>
+    <script type="text/javascript" src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <script type="text/javascript" src="scripts/photo-album-script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 align="center">WILDLIFE PHOTO ALBUM</h1>
+      <hr>
+      <div class="search-input-box">
+          <input type="text" id="search-input" placeholder="Talk to the bot">
+          <button id="voice-search-button" onclick="voiceSearchPhoto()">Voice Search</button>
+          <button id="text-search-button" onclick="textSearchPhoto()">Text Search</button>
+      </div>
+      <div id="output-box">
+      </div>
+      <div class="upload-box">
+          <label><strong><i>Upload more pictures:</i></strong></label>
+          <div class="upload-input-box">
+            <input type="file" id="file-input">
+          </div>
+          <button id="upload-button" onclick="uploadPhoto()">Upload</button>
+      </div>
+    </div>
+  </body>
+</html>
