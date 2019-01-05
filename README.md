@@ -1,2 +1,2 @@
-# Cloud-Computing-Wildlife-Photo-Album
-Cloud Computing Wildlife Photo Album
+# Cloud-Voice/NLP Controlled Wildlife Photo Album
+Cloud-Voice/NLP Controlled Wildlife Photo Album
