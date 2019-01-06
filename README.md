@@ -7,7 +7,8 @@ Wildlife Photo Album allows the user to upload new images (.png,.jpg,.jpeg) as w
 The PUT method in the API Gateway used for uploading new images is configured as Amazon S3 Proxy. AWS Rekognition is used to detect labels of the newly uploaded images which are stored along with the S3 object reference in the ElasticSearch Index
 
 ### Search Existing Images
-Searching existing images is done with the help of Amazon Lex by training the following intent:<br>
+Searching existing images is done with the help of Amazon Lex by training the following intent:
+
 **SearchIntent:**<br>
 It is used to disambiguate the user search query.For example it should disambiguate both keyword ("dogs","cats") and sentence ("show me dogs and cats","show me photos with dogs and cats in them") searches and yield keywords like dogs and cats which are then used to search in the ElasticSearch Index for getting results (existing image S3 object reference for which any detected Rekognition label matches the keyword used for searching) and then displaying the relevant images on the user interface using S3.
   
