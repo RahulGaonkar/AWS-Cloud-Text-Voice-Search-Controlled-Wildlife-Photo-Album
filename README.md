@@ -8,7 +8,7 @@ The PUT method in the API Gateway used for uploading new images is configured as
 
 ### Search Existing Images
 Searching existing images is done with the help of Amazon Lex by training the following intent:<b>
-**SearchIntent:**<br>
+SearchIntent:
 It is used to disambiguate the user search query.For example it should disambiguate both keyword ("dogs","cats") and sentence ("show me dogs and cats","show me photos with dogs and cats in them") searches and yield keywords like dogs and cats which are then used to search in the ElasticSearch Index for getting results (existing image S3 object reference for which any detected Rekognition label matches the keyword used for searching) and then displaying the relevant images on the user interface using S3.
   
 The ElasticSearchIndex instance and all the lambdas are deployed inside a VPC to prevent unauthorized internet access. The NAT Gateway is also configured so that the lambda can access the AWS services outside the VPC.    
