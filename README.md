@@ -11,7 +11,7 @@ Searching existing images is done with the help of Amazon Lex by training the fo
 
 **SearchIntent:**<br>
 It is used to disambiguate the user search query.For example it disambiguates both keyword ("dogs","cats") and sentence ("show me dogs and cats","show me photos with dogs and cats in them") searches and yield keywords like dogs and cats.
-These keywords are then used to search in the ElasticSearch Index for getting results (existing S3 object (images) references with same label as the keyword used for searching) and then the object reference returned as result are displayed on the user interface with the help of S3.
+These keywords are then used to search in the ElasticSearch Index for getting results (existing S3 object (images) references with same label as the keyword used for searching) and then the relevant images are displayed on the user interface with the help of the S3 object reference returned as result.
   
 The ElasticSearch instance and all the lambdas are deployed inside a VPC to prevent unauthorized internet access. The NAT Gateway is also configured so that the lambda inside the VPC can access the AWS services outside the VPC.    
  
