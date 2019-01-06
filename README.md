@@ -10,9 +10,10 @@ The PUT method in the API Gateway used for uploading new images is configured as
 Searching existing images is done with the help of Amazon Lex by training the following intent:
 
 **SearchIntent:**<br>
-It is used to disambiguate the user search query.For example it should disambiguate both keyword ("dogs","cats") and sentence ("show me dogs and cats","show me photos with dogs and cats in them") searches and yield keywords like dogs and cats which are then used to search in the ElasticSearch Index for getting results (existing image S3 object reference for which any detected Rekognition label matches the keyword used for searching) and then displaying the relevant images on the user interface using S3.
+It is used to disambiguate the user search query.For example it disambiguates both keyword ("dogs","cats") and sentence ("show me dogs and cats","show me photos with dogs and cats in them") searches and yield keywords like dogs and cats.
+These keywords are then used to search in the ElasticSearch Index for getting results (existing S3 object (images) references with same label as the keyword used for searching) and then the object reference returned as result are displayed on the user interface with the help of S3.
   
-The ElasticSearchIndex instance and all the lambdas are deployed inside a VPC to prevent unauthorized internet access. The NAT Gateway is also configured so that the lambda can access the AWS services outside the VPC.    
+The ElasticSearch instance and all the lambdas are deployed inside a VPC to prevent unauthorized internet access. The NAT Gateway is also configured so that the lambda inside the VPC can access the AWS services outside the VPC.    
  
 ## How to Setup
 [AWS-Cloud-Text-Voice-Search-Controlled-Wildlife-Photo-Album-Instructions](AWS-Cloud-Text-Voice-Search-Controlled-Wildlife-Photo-Album-Instructions.pdf)
